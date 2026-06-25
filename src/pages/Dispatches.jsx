@@ -14,19 +14,19 @@ const itemVariants = {
 const Dispatches = () => {
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" className="w-full max-w-7xl mx-auto space-y-6">
-      <motion.div variants={itemVariants} className="flex justify-between items-end">
+      <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3">
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight text-primary">Control de Despachos</h1>
+          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-primary">Control de Despachos</h1>
           <p className="text-sm text-secondary mt-1">Métricas logísticas de última milla.</p>
         </div>
-        <button className="btn btn-primary">
+        <button className="btn btn-primary self-start sm:self-auto">
           <Truck size={16} /> Programar Despacho
         </button>
       </motion.div>
 
       <motion.div variants={itemVariants} className="glass-panel p-1">
-        <div className="flex justify-between items-center p-4 border-b border-border/50">
-          <div className="relative w-80">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 p-4 border-b border-border/50">
+          <div className="relative w-full sm:w-80">
             <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-secondary" />
             <input type="text" className="input-field pl-9" placeholder="Buscar por ID, transportista..." />
           </div>

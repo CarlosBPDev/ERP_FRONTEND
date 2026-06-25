@@ -45,29 +45,29 @@ const PurchaseOrders = () => {
   return (
     <>
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="w-full max-w-7xl mx-auto space-y-6">
-        <motion.div variants={itemVariants} className="flex justify-between items-end">
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3">
           <div>
-            <h1 className="text-3xl font-semibold tracking-tight text-primary">Órdenes de Compra</h1>
+            <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-primary">Órdenes de Compra</h1>
             <p className="text-sm text-secondary mt-1">Registro, aprobación y seguimiento financiero.</p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             {selectedOrders.length > 0 && (
               <button 
                 onClick={handleApproveSelected}
-                className="btn btn-secondary text-success border-success/20 hover:bg-success/10"
+                className="btn btn-secondary text-success border-success/20 hover:bg-success/10 text-xs sm:text-sm"
               >
-                <CheckCircle2 size={16} /> Aprobar {selectedOrders.length} Seleccionadas
+                <CheckCircle2 size={14} /> Aprobar {selectedOrders.length}
               </button>
             )}
-            <button className="btn btn-primary" onClick={() => setIsModalOpen(true)}>
-              <Plus size={16} /> Nueva Orden
+            <button className="btn btn-primary text-xs sm:text-sm" onClick={() => setIsModalOpen(true)}>
+              <Plus size={14} /> Nueva Orden
             </button>
           </div>
         </motion.div>
 
         <motion.div variants={itemVariants} className="glass-panel p-1">
-          <div className="flex justify-between items-center p-4 border-b border-border/50">
-            <div className="relative w-80">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 p-4 border-b border-border/50">
+            <div className="relative w-full sm:w-80">
               <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-secondary" />
               <input type="text" className="input-field pl-9" placeholder="Buscar por proveedor, N° orden..." />
             </div>
