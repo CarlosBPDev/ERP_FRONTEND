@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-primary antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 outline-none disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply bg-primary text-background hover:bg-gray-200;
+  }
+  .btn-secondary {
+    @apply bg-surface border border-border text-primary hover:bg-surfaceHover;
+  }
+  .btn-danger {
+    @apply bg-danger/10 text-danger hover:bg-danger/20 border border-danger/20;
+  }
+  .btn-icon {
+    @apply p-1.5 text-secondary hover:text-primary hover:bg-surface rounded-md transition-colors;
+  }
+  
+  .input-field {
+    @apply w-full bg-surface border border-border text-primary text-sm rounded-md px-3 py-1.5 outline-none transition-colors duration-200 focus:border-secondary focus:ring-1 focus:ring-secondary placeholder-secondary/50;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border;
+  }
+  .badge-success { @apply bg-success/10 text-success border-success/20; }
+  .badge-warning { @apply bg-warning/10 text-warning border-warning/20; }
+  .badge-danger { @apply bg-danger/10 text-danger border-danger/20; }
+  .badge-info { @apply bg-accent/10 text-accent border-accent/20; }
+
+  .glass-panel {
+    @apply bg-surface/50 backdrop-blur-md border border-border rounded-xl;
+  }
+
+  .table-wrapper {
+    @apply w-full overflow-x-auto border border-border rounded-lg bg-surface/30;
+  }
+  .data-table {
+    @apply w-full text-left text-sm whitespace-nowrap;
+  }
+  .data-table th {
+    @apply px-4 py-3 font-medium text-secondary border-b border-border bg-surface/50;
+  }
+  .data-table td {
+    @apply px-4 py-3 border-b border-border/50 text-primary;
+  }
+  .data-table tr:hover td {
+    @apply bg-surfaceHover/50;
+  }
+  .data-table tr:last-child td {
+    @apply border-0;
+  }
+}
